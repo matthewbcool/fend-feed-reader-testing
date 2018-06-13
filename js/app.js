@@ -25,22 +25,8 @@ var allFeeds = [
 
 ];
 
-/* This is a global variables I made to test, polluting the global namespace, 
-*  with all the Urls and names because Ive spent days on this project now and I cant 
-*  figure out how else to test if they are defined. 
-*/
-var allUrls = [];
 
-for (feed of allFeeds) {
-    allUrls.push(feed.url)
-};
 
-var allNames = [];
-
-for (feed of allFeeds) {
-    allNames.push(feed.name)
-};
-console.log(allNames)
 
 /* This function starts up our application. The Google Feed
  * Reader API is loaded asynchonously and will then call this

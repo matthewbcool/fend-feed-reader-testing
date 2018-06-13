@@ -22,6 +22,12 @@ $(function() {
 
 
     });
+    //get all the url's from allFeeds
+    var allUrls = [];
+
+    for (feed of allFeeds) {
+        allUrls.push(feed.url)
+    };
     describe('Url Feeds', function() {
 
         it('are defined', function() {
@@ -31,6 +37,13 @@ $(function() {
 
 
     });
+    //get all the names from allFeeds
+    var allNames = [];
+
+    for (feed of allFeeds) {
+        allNames.push(feed.name)
+    };
+
     describe('Name Feeds', function() {
 
         it('are defined', function() {
@@ -40,8 +53,15 @@ $(function() {
 
 
     });
-
-
+    
+    describe('The menu', function() {
+        //get the body and save it to 'theBody'
+        var theBody = document.getElementsByTagName('body');
+        theBody = theBody[0];
+        it('is hidden by default', function(){
+            expect(theBody.className === 'menu-hidden').toBe(true);
+        });
+    })
     /* TODO: Write a new test suite named "The menu" */
 
         /* TODO: Write a test that ensures the menu element is
