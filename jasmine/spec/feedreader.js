@@ -56,10 +56,21 @@ $(function() {
     
     describe('The menu', function() {
         //get the body and save it to 'theBody'
+        var menuHidden;
         var theBody = document.getElementsByTagName('body');
         theBody = theBody[0];
+        menuHidden = theBody.className === 'menu-hidden';
+        menuIcon = $('.menu-icon-link');
+        
         it('is hidden by default', function(){
-            expect(theBody.className === 'menu-hidden').toBe(true);
+            expect(menuHidden).toBe(true);
+        });
+        it('changes visibility when menu is clicked', function(){
+            spyOn(window, 'menuIcon');
+            menuIcon.on('click', function() {
+                $('body').toggleClass('menu-hidden');
+            });
+            expect(menuIcon.on().toHaveBeenCalled())
         });
     })
     /* TODO: Write a new test suite named "The menu" */
