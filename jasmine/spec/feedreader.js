@@ -60,32 +60,34 @@ $(function() {
         var theBody = document.getElementsByTagName('body');
         theBody = theBody[0];
         menuHidden = theBody.className === 'menu-hidden';
-        menuIcon = $('.menu-icon-link');
         
         it('is hidden by default', function(){
             expect(menuHidden).toBe(true);
         });
-        it('changes visibility when menu is clicked', function(){
-            spyOn(window, 'menuIcon');
-            menuIcon.on('click', function() {
-                $('body').toggleClass('menu-hidden');
-            });
-            expect(menuIcon.on().toHaveBeenCalled())
+
+        $('body').toggleClass('menu-hidden');
+        it('changes visibility when menu is clicked off', function(){
+            expect(menuHidden).not.toBe();
         });
-    })
-    /* TODO: Write a new test suite named "The menu" */
+        $('body').toggleClass('menu-hidden');
+        it('changes visibility when menu is clicked back on', function(){
+            expect(menuHidden).toBe(true);
+        });
+    });
 
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+    describe('Initial Entries', function() {
+       var theEntry;
+       var theContainer;
+        beforeEach(function(done) {
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+         done();
+        });
+        it('loadFeed function completes work when called', function(done){
+            expect()
+            done();
+        });
+    });
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
