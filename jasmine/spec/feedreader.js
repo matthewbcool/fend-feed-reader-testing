@@ -116,9 +116,9 @@ $(function() {
                 })
             });
         });
+        
         it('content changes when new feed is loaded', function(){
             expect(newFeed).not.toEqual(initialFeed);
- 
         });
     })
 }());
