@@ -28,7 +28,9 @@ $(function() {
     describe('Url Feeds', function() {
 
         it('are defined', function() {
-            expect(allUrls).toBeDefined();
+            allUrls.forEach(function(){
+                expect(allUrls).toBeDefined();  
+            })
             expect(allUrls.length).not.toBe(0);
         });
     });
@@ -45,8 +47,10 @@ $(function() {
     describe('Name Feeds', function() {
 
         it('are defined', function() {
-            expect(allNames).toBeDefined();
-            expect(allNames.length).not.toBe(0);
+            allNames.forEach(function(){
+              expect(allNames).toBeDefined();
+            })
+           expect(allNames.length).not.toBe(0);   
         });
     });
 
@@ -94,7 +98,7 @@ $(function() {
         });
 
         it('loadFeed function completes work and has at least one entry', function(){
-            expect($('.entry').length).toBeGreaterThan(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
