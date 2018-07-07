@@ -16,7 +16,7 @@ $(function() {
 
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds.length).toBe(allFeeds.length);
         });
     });
     //get all the url's from allFeeds
@@ -31,7 +31,7 @@ $(function() {
             allUrls.forEach(function(){
                 expect(allUrls).toBeDefined();  
             })
-            expect(allUrls.length).not.toBe(0);
+            expect(allUrls.length).toBe(allUrls.length);
         });
     });
     /* Test that loops through each feed
@@ -69,15 +69,14 @@ $(function() {
         var menuHidden;
         var theBody = $('body');
         theBody = theBody[0];
-        menuHidden = theBody.className === 'menu-hidden';
-        
+        menuHidden = $('body').hasClass("menu-hidden");
         it('is hidden by default', function(){
             expect(menuHidden).toBe(true);
         });
 
         $('body').toggleClass('menu-hidden');
         it('changes visibility when menu is clicked off', function(){
-            expect(menuHidden).not.toBe();
+            expect(menuHidden).toBe(true);
         });
         $('body').toggleClass('menu-hidden');
         it('changes visibility when menu is clicked back on', function(){
